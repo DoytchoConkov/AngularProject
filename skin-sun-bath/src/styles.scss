@@ -1,0 +1,52 @@
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+
+  background-image: url('./assets/img/OIP.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+
+  max-width: 1500px;
+  margin: auto;
+  position: relative;
+  color: white;
+  min-height: 97.5vh;
+}
+
+body, form, input, textarea, option, select, button {
+  font: inherit;
+}
+
+@media (min-width: 800px) {
+  html {
+      font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+      font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+      font-size: 18px;
+  }
+}

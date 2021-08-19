@@ -1,0 +1,33 @@
+<header>
+  <div class="navbar-wrap">
+    <section class="logo-wrap" routerLink="/">
+      <img src="../../../assets/img/woman-relaxing-on-sun-chair-260nw-670354261.webp" width=75px heigh=75px>
+      <span>Skin Sun Bath</span>
+    </section>
+    <nav class="mini-navbar">
+      <ul *ngIf="!isLogged">
+        <li>
+          <a routerLink="/login" class="user">Login</a>
+        </li>
+        <li>
+          <a routerLink="/register" class="user">Register</a>
+        </li>
+      </ul>
+      <ul *ngIf="isLogged">
+        <li>
+          <a routerLink="/add-skin">Daily skin color</a>
+        </li>
+        <li>
+          <a routerLink="/skin">Skins gradient</a>
+        </li>
+        <li>
+          <a routerLink="/skin/calculate">Skin Calculator</a>
+        </li>
+        <p class="space"></p>
+        <li  class="user">Welcome, {{username}}</li>
+        <li (click)="logout()" class="user">Logout</li>
+      </ul>
+    </nav>
+  </div>
+
+</header>

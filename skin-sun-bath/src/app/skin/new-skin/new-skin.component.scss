@@ -1,0 +1,134 @@
+/* new-skin */
+
+.new-skin-border {
+  border: 1px solid;
+  border-radius: 1em;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 4em;
+  padding: 1em;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.3)
+}
+.header-background{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #C19A6B;
+}
+.new-skin-border .input {
+  margin-bottom: 1em;
+}
+
+// .header-background {
+//   background-color: #4ebced;
+//   border: 1px solid #4ebced;
+//   padding: 1.5em;
+//   padding-bottom: 0;
+//   margin-bottom: 1em;
+//   border-top-right-radius: 1em;
+//   border-top-left-radius: 1em;
+// }
+
+// .header-background span {
+//   background-color: #fff;
+//   padding: 0.5em;
+//   margin-top: 1em;
+//   border-radius: 0.3em;
+// }
+
+.new-skin-date-duration {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+#skinBathDuration{
+  width: 20%;
+}
+
+.new-skin-date-duration label{
+margin-right: 20px;
+margin-bottom: 10px;
+}
+// .new-skin-duration {
+//   min-height: 100%;
+//   width: 100%;
+//   padding: 0;
+//   margin: 0;
+// }
+
+.new-skin-comment textarea {
+  width: 80%;
+}
+
+// .new-skin-duration label {
+//   margin-bottom: 0.3em;
+// }
+
+// .new-skin-date input {
+//   width: 175px;
+//   border-radius: 0.3em;
+//   padding: 0.35em;
+// }
+
+button+button {
+  margin-left: 1rem;
+}
+
+.new-skin-buttons {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.new-skin-buttons button {
+  padding: 0.4em 1.5em;
+  border: 1px solid #333333;
+  border-radius: 0.3em;
+}
+
+p.error , .red{
+  text-align: left;
+  border-radius: 0.3em;
+  color: red;
+  padding-top: 0;
+}
+
+.input-error {
+  border-left-color: red;
+}
+
+
+.skin-colors{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self:auto;
+  justify-content: space-around;
+}
+.skin-lists{
+  margin-top: 25px;
+}
+input[type="radio"] {
+  left: -999em;
+  position: absolute;
+}
+
+input[type="radio"]:checked + label {
+  border: 3px solid white;
+}
+
+.skin-colors label {
+  width: 65px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black ;
+  border-radius: 5px;
+}
+
+// input:invalid {
+//   border: 2px solid red;
+// }
+
+// input:valid {
+//   border: 2px solid rgb(39, 245, 39);
+// }

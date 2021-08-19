@@ -1,0 +1,24 @@
+h1,div {
+    margin-top: 150px;
+}
+
+
+
+h1,p,div {
+    color: chocolate;
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    background: #A67B5B;
+    border: 1px lightgrey;
+    border-radius: 5px;
+}
+
+a:hover{
+    background: #C19A6B;
+    color: #3B2F2F;
+}

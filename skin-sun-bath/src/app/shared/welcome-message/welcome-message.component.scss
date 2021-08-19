@@ -1,0 +1,56 @@
+section {
+  width: 50%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.3)
+  // TODO make section center on the screen
+}
+.welcome {
+  padding: 0.3em 0.5em;
+  border: 1px solid #999;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+  margin: 0 auto;
+  margin-top: 4em;
+}
+
+.welcome h3 {
+  background-color: #a67b5b;
+  border-radius: 0.3em;
+  width: 100%;
+  padding: 0.3em 1em;
+  text-align: center;
+}
+
+.welcome p , .welcome h4{
+  padding: 1em;
+  font-style: normal;
+}
+
+.welcome a {
+  color: white;
+  text-decoration: none;
+  background-color: #a67b5b;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em 5.2em;
+  margin: 1em;
+}
+
+.welcome a:hover {
+  cursor: pointer;
+}
+
+.welcome ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 1em;
+}
+
+.welcome li {
+  list-style: none;
+}
+
+.logged{
+  border-top: 1px solid #999;
+}

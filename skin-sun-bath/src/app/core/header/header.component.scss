@@ -1,0 +1,85 @@
+
+header {
+  background: linear-gradient(0deg, #464646 0%, #3D2B1F 35%, #3B2F2F 100%);
+  margin-top: 20px;
+}
+
+header ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+}
+
+.mini-navbar ul {
+  border: 1px solid #4B3621;
+  border-radius: 0.3em;
+  width: 100%;
+}
+
+header li {
+  border: 1px solid white;
+  border-radius: 0.3em;
+  list-style: none;
+  margin: 0.35em;
+  padding: 0.35em .95em;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.logo-wrap {
+  font-family: 'Parisienne', cursive;
+  letter-spacing: .35em;
+  margin: 0.5em 0;
+}
+
+.navbar-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.mini-navbar ul {
+  background-color: 	#A67B5B;
+  border-radius: 5px;
+}
+
+.mini-navbar ul li+li {
+  border-left: 1px solid lightgrey;
+  padding-left: .5em;
+}
+
+nav li:hover{
+  background: #C19A6B;
+  color: #3B2F2F;
+}
+
+.user:hover{
+  background: #C19A6B;
+  color: #3B2F2F;
+}
+ .logo-wrap{
+   display: flex;
+   align-items: center;
+ }
+
+ .logo-wrap span{
+   margin-left: 25px;
+ }
+
+ .logo-wrap:hover{
+  cursor: pointer;
+}
+
+.space{
+  width: 200px;
+}
