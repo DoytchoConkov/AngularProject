@@ -1,28 +1,34 @@
 /*login register forms  */
 
-form.login, form.register {
+form.login,
+form.register {
   width: 40%;
   margin: 2em auto 0;
   text-align: center;
 }
 
-.login fieldset, .register fieldset {
+.login fieldset,
+.register fieldset {
   border-radius: 0.3em;
   padding: 0.8em;
-  background-color:  #C19A6B;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-.login h2, .register h2 {
+.login h2 {
   padding-top: 0;
   border-bottom: none;
+  background-color: #a67b5b;
+  color: white;
 }
 
-.login p, .register p {
+.login p,
+.register p {
   padding-bottom: 0;
   padding-top: 1.5rem;
 }
 
-.login input, .register input {
+.login input,
+.register input {
   flex: 0 1 100%;
   border: 1px solid;
   padding: 0.3em;
@@ -31,11 +37,13 @@ form.login, form.register {
   border-bottom-right-radius: 0.3em;
 }
 
-.login select, .register select {
+.login select,
+.register select {
   border-color: black;
 }
 
-.login button, .register button {
+.login button,
+.register button {
   border: none;
   border-radius: 0.3em;
   padding: 0.6em 1.2em;
@@ -45,30 +53,34 @@ form.login, form.register {
   color: chocolate;
 }
 
-.login fa-icon, .register fa-icon {
+.login fa-icon,
+.register fa-icon {
   border: 1px solid;
   border-right: none;
   padding: 0.55em;
   border-top-left-radius: 0.3em;
   border-bottom-left-radius: 0.3em;
-  background-color: #C19A6B;
+  background-color: #c19a6b;
 }
 
-.login a, .register a {
+.login a,
+.register a {
   color: #007bff;
 }
 
-.login a:hover, .register a:hover {
+.login a:hover,
+.register a:hover {
   cursor: pointer;
 }
 
-.login .field, .register .field {
+.login .field,
+.register .field {
   display: flex;
   padding-bottom: 0;
 }
 
-h2{
-  color: #3B2F2F;
+h2 {
+  color: #3b2f2f;
 }
 
 /* errors  */

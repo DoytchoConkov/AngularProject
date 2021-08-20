@@ -7,12 +7,14 @@ form.login, form.register {
 .login fieldset, .register fieldset {
   border-radius: 0.3em;
   padding: 0.8em;
-  background-color: #C19A6B;
+  background: rgba(0, 0, 0, 0.3)
 }
 
-.login h2, .register h2 {
+ .register h2 {
   padding-top: 0;
   border-bottom: none;
+  background-color: #a67b5b;
+  color: white;
 }
 
 .login p, .register p {

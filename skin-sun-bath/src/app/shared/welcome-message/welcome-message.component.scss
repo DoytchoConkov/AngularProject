@@ -1,8 +1,7 @@
 section {
   width: 50%;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.3)
-  // TODO make section center on the screen
+  background: rgba(0, 0, 0, 0.3)
 }
 .welcome {
   padding: 0.3em 0.5em;
@@ -13,7 +12,7 @@ section {
   margin-top: 4em;
 }
 
-.welcome h3 {
+.welcome h2 {
   background-color: #a67b5b;
   border-radius: 0.3em;
   width: 100%;

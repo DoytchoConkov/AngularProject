@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/user/user.service';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-calculator',
@@ -8,16 +8,28 @@ import { UserService } from 'src/app/user/user.service';
 })
 
 export class CalculatorComponent {
-  get isLogged(): boolean {
-    return this.userService.isLogged;
+  form: FormGroup;
+  nextClicked = false;
+  constructor(private fb: FormBuilder,) {
+    this.form=this.fb.group({
+      skinColor: ['', [Validators.required]],
+      skinWantedColor: ['', [Validators.required]],
+      days: ['', [Validators.required]],
+      dayDuration: ['', [Validators.required]]
+    });
   }
 
-  constructor(
-    private userService: UserService
-  ) { }
+  public onSubmit(): void {
+    if (this.nextClicked) {
 
-  calculateDuration(): void {
+    }
+  }
 
+  public calculateDailyDuration(): void {
+console.log(this.form)
+  }
+  public calculateDays(): void {
+    console.log(this.form)
   }
 
 }
