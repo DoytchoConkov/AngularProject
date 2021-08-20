@@ -17,7 +17,7 @@
           Fullname is required!
         </p>
         <p *ngIf="form.get('username')?.errors?.minlength" class="error">
-          Fullname should be more than 4
+          Fullname should be more than 5
         </p>
         <p *ngIf="form.get('username')?.errors?.pattern" class="error">
           Fullname should contain Firstname and Lastname
@@ -26,7 +26,7 @@
 
       <p class="field field-icon">
         <label for="email"><span>
-        </span></label>
+          </span></label>
         <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" formControlName="email">
       </p>
 
@@ -37,11 +37,13 @@
         <p *ngIf="form.get('email')?.errors?.invalidEmail" class="error">
           Email is not valid!
         </p>
+        <!-- <p *ngIf="form.get('email').errors.nonUniqueUsername">Email is taken</p>
+        <p *ngIf="form.get('email').errors.noConnection">Can't tell if email is taken</p> -->
       </ng-container>
 
       <p class="field field-icon">
         <label for="password"><span>
-        </span></label>
+          </span></label>
         <input type="password" name="password" id="password" placeholder="******" formControlName="password">
       </p>
 
@@ -56,7 +58,7 @@
 
       <p class="field field-icon">
         <label for="rePassword"><span>
-        </span>
+          </span>
         </label>
         <input type="password" name="rePassword" id="rePassword" placeholder="******" formControlName="rePassword">
       </p>

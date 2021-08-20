@@ -1,12 +1,19 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
+import { UserService } from '../user/user.service';
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
   if (!control.value) { return null; }
   return /[A-Za-z0-9._%+-]{2,}@[a-zA-Z]{1,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})/.test(control.value) ? null : {
     invalidEmail: true
   };
+}
+
+export function emailIsExist(control: AbstractControl): ValidationErrors | null {
+  
+  return null;
+  // return { emailIsExist: true };
 }
 
 export function sameValueAsFactory(getTargetControl: () => AbstractControl | null, killSubscriptions: Observable<any>) {

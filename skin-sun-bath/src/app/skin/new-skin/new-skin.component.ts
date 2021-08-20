@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnDestroy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { ContentService } from 'src/app/content.service';
 
@@ -8,17 +9,25 @@ import { ContentService } from 'src/app/content.service';
   templateUrl: './new-skin.component.html',
   styleUrls: ['./new-skin.component.scss']
 })
-export class NewSkinComponent {
+export class NewSkinComponent implements OnDestroy{
+  killSubscription = new Subject();
+  form: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private contentService: ContentService,
     private router: Router
-  ) { }
+  ) {this.form = this.fb.group({
+    skinDate: ['', [Validators.required, Validators.minLength(4)]],
+    skinBathDuration: ['', [Validators.required]],
+    comment: [],
+    skinColor: ['', [Validators.required]]
+    
+  }); }
 
-  createSkin(form: NgForm): void {
-    console.log(form.value)
-    if (form.invalid) { return; }
-    this.contentService.saveSkin(form.value).subscribe({
+  saveSkin(): void {
+    if (this.form.invalid) { return; }
+    this.contentService.saveSkin(this.form.value).subscribe({
       next: () => {
         this.router.navigate(['/home']);
       },
@@ -26,5 +35,9 @@ export class NewSkinComponent {
         console.log(err);
       }
     })
+  }
+  ngOnDestroy(): void {
+    this.killSubscription.next();
+    this.killSubscription.complete();
   }
 }

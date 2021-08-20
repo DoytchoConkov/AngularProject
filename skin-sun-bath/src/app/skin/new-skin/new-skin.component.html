@@ -2,123 +2,122 @@
   <div class="header-background">
     <h2>New Skin Tan</h2>
   </div>
-  <form #form="ngForm" (ngSubmit)="createSkin(form)">
+  <form [formGroup]="form" class="register" action="" method="post" (ngSubmit)="saveSkin()">
 
     <div class="new-skin-date-duration">
       <label for="skinDate">Date:
-        <input type="date" name="skinDate" id="skinDate" ngModel required></label>
-      <!-- <p class="error">
+        <input type="date" name="skinDate" id="skinDate" formControlName="skinDate" required></label>
+      <ng-container *ngIf="form.get('skinDate')?.touched">
+        <p *ngIf="form.get('skinDate')?.errors?.required" class="error">
           Date is required.
-        </p> -->
-      <!-- <p class="error">
-          Theme name must be at least 5 characters long.
-        </p> -->
+        </p>
+      </ng-container>
       <label for="skinBathDuration">Sun Bath Duration in munutes:
-        <input type="number" name="skinBathDuration" id="skinBathDuration" ngModel required min="0" max="720"></label>
-      <!-- <p class="error">
+        <input type="number" name="skinBathDuration" id="skinBathDuration" formControlName="skinBathDuration" required
+          min="0" max="720"></label>
+      <ng-container *ngIf="form.get('skinBathDuration')?.touched">
+        <p *ngIf="form.get('skinBathDuration')?.errors?.required" class="error">
           Duration is required.
         </p>
-        <p class="error">
-          Duration must be between 0 and 720 minutes.
-        </p> -->
-
+        <p *ngIf="form.get('skinBathDuration')?.errors?.min" class="error">
+          Duration must be equals or more than 0 minutes.
+        </p>
+        <p *ngIf="form.get('skinBathDuration')?.errors?.max" class="error">
+          Duration must be equals or less than 720 minutes.
+        </p>
+      </ng-container>
     </div>
     <div class="new-skin-comment">
-
       <label for="comment">Comment:
-        <textarea type="text" name="comment" id="comment" rows="1" class="height" ngModel
+        <textarea type="text" name="comment" id="comment" rows="1" class="height" formControlName="comment"
           maxlength="100"></textarea></label>
-      <!-- <p class="error">
-          The field with your comment is required.
-        </p>
-        <p class="error">
-          Comment must be at least 5 characters long.
-        </p> -->
     </div>
     <p class="skin-lists">Please choose your current skin color:</p>
     <div class="skin-colors">
-      <input type="radio" name="skinColor" id="skinColor1" value="1" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor1" value="1" required formControlName="skinColor">
       <label for="skinColor1" style="background: #F8D1AE;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor2" value="2" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor2" value="2" required formControlName="skinColor">
       <label for="skinColor2" style="background: #F9C99D;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor3" value="3" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor3" value="3" required formControlName="skinColor">
       <label for="skinColor3" style="background: #F4BF96;"> </label>
 
-      <input type="radio" name="skinColor" id="skinColor4" value="4" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor4" value="4" required formControlName="skinColor">
       <label for="skinColor4" style="background: #F3C996;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor5" value="5" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor5" value="5" required formControlName="skinColor">
       <label for="skinColor5" style="background: #F3C18A;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor6" value="6" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor6" value="6" required formControlName="skinColor">
       <label for="skinColor6" style="background: #F2C18A;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor7" value="7" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor7" value="7" required formControlName="skinColor">
       <label for="skinColor7" style="background: #F2B587;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor8" value="8" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor8" value="8" required formControlName="skinColor">
       <label for="skinColor8" style="background: #E6B37C;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor9" value="9" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor9" value="9" required formControlName="skinColor">
       <label for="skinColor9" style="background: #E2B680;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor10" value="10" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor10" value="10" required formControlName="skinColor">
       <label for="skinColor10" style="background: #DFB076;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor11" value="11" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor11" value="11" required formControlName="skinColor">
       <label for="skinColor11" style="background: #D6A578;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor12" value="12" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor12" value="12" required formControlName="skinColor">
       <label for="skinColor12" style="background: #D7A677;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor13" value="13" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor13" value="13" required formControlName="skinColor">
       <label for="skinColor13" style="background: #DBA27C;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor14" value="14" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor14" value="14" required formControlName="skinColor">
       <label for="skinColor14" style="background: #D0A078;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor15" value="15" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor15" value="15" required formControlName="skinColor">
       <label for="skinColor15" style="background: #BE9578;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor16" value="16" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor16" value="16" required formControlName="skinColor">
       <label for="skinColor16" style="background: #AE825F;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor17" value="17" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor17" value="17" required formControlName="skinColor">
       <label for="skinColor17" style="background: #A18260;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor18" value="18" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor18" value="18" required formControlName="skinColor">
       <label for="skinColor18" style="background: #8E6F54;"></label>
     </div>
     <p class="skin-burn">Or sun burn your skin:</p>
     <div class="skin-colors">
-      <input type="radio" name="skinColor" id="skinColor19" value="19" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor19" value="19" required formControlName="skinColor">
       <label for="skinColor19" style="background: #ee9fa3;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor20" value="20" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor20" value="20" required formControlName="skinColor">
       <label for="skinColor20" style="background: #FB6C72;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor21" value="21" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor21" value="21" required formControlName="skinColor">
       <label for="skinColor21" style="background: #EF5D63;"> </label>
 
-      <input type="radio" name="skinColor" id="skinColor22" value="22" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor22" value="22" required formControlName="skinColor">
       <label for="skinColor22" style="background: #EB4850;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor23" value="23" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor23" value="23" required formControlName="skinColor">
       <label for="skinColor23" style="background: #DF3C45;"></label>
 
-      <input type="radio" name="skinColor" id="skinColor24" value="24" required="required" ngModel>
+      <input type="radio" name="skinColor" id="skinColor24" value="24" required formControlName="skinColor">
       <label for="skinColor24" style="background: #E02837;"></label>
 
-      <!-- <p class="error">
-          Skin color is required.
-        </p> -->
+      <ng-container *ngIf="form.get('skinColor')?.touched">
+        <p *ngIf="form.get('skinColor')?.errors?.required" class="error">
+          You must choose skin tan.
+        </p>
+      </ng-container>
     </div>
 
     <div class="new-skin-buttons">
       <button type="button" routerLink="/home" class="cancel">Cancel</button>
-      <button class="public">Submit</button>
+      <button class="public" >Submit</button>
     </div>
 
   </form>
