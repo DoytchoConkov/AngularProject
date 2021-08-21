@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
+        unique: true
     },
     username: {
         type: String,
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
                 return /[a-zA-Z0-9]+/g.test(v);
             },
             message: props => `${props.value} must contains only latin letters and digits!`
-        },
+        }
     },
     password: {
         type: String,
@@ -31,8 +31,12 @@ const userSchema = new mongoose.Schema({
                 return /[a-zA-Z0-9]+/g.test(v);
             },
             message: props => `${props.value} must contains only latin letters and digits!`
-        },
-    }
+        }
+    },
+    skins: [{
+        type: ObjectId,
+        ref: "Skin"
+    }]
 }, { timestamps: { createdAt: 'created_at' } });
 
 userSchema.methods = {

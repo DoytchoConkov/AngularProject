@@ -49,7 +49,7 @@ export class UserService {
     );
   }
 
-  updateProfile(data: { username: string; email: string; tel: string; }) {
+  updateProfile(data: { username: string; email: string; }) {
     return this.http.put<IUser>(`${apiURL}/profile`, data, { withCredentials: true }).pipe(
       tap((user) => this.user = user)
     );

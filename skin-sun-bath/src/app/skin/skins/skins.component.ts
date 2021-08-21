@@ -23,16 +23,10 @@ export class SkinsComponent {
     private userService: UserService
   ) {
     this.fetchSkins();
-    this.fetchRecentSkins();
   }
 
   fetchSkins(): void {
     this.skins = undefined;
-    this.contentService.loadSkins().subscribe(skins => this.skins = skins);
-  }
-
-  fetchRecentSkins(): void {
-    this.recentSkins = undefined;
-    this.contentService.loadBestSkins(5).subscribe(skins => this.recentSkins = skins);
+    this.contentService.loadSkins(this.userService.user?.email!).subscribe(skins => this.skins = skins);
   }
 }

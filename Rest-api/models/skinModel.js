@@ -21,8 +21,7 @@ const skinSchema = new mongoose.Schema({
     userId: {
         type: ObjectId,
         ref: "User"
-    },
-   
+    }
 }, { timestamps: { createdAt: 'created_at' } });
 
 module.exports = mongoose.model('Skin', skinSchema);

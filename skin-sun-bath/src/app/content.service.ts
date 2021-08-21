@@ -18,17 +18,12 @@ export class ContentService {
     return this.http.get<Skin>(`${API_URL}/skins?day=${day}`, { withCredentials: true });
   }
 
-  loadSkins() {
-    return this.http.get<Skin[]>(`${API_URL}/skins`, { withCredentials: true });
+  loadSkins( email: string ) {
+    return this.http.get<Skin[]>(`${API_URL}/skins?email=${email}`, { withCredentials: true });
   }
 
   loadSkinCoeficente() {
     return this.http.get<number>(`${API_URL}/skins/skins-coeficiente`, { withCredentials: true });
-  }
-
-  loadBestSkins(limit?: number) {
-    const query = limit ? `?limit=${limit}` : ''
-    return this.http.get<Skin[]>(`${API_URL}/skins${query}`, { withCredentials: true });
   }
 
   saveSkin(data: any) {
