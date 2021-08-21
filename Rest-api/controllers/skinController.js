@@ -7,7 +7,7 @@ function getSkins(req, res, next) {
     let { email, limit } = req.query;
     // skinModel.find()
         userModel.findOne({ email: email })
-        .populate('userId')
+        .populate('skins')
         .then(user => res.json(user.skins))
         // .then(skins => res.json(skins))
         .catch(next);
@@ -43,7 +43,7 @@ function newSkin(skinDate, skinBathDuration, comment, skinColor, userId) {
 function createSkin(req, res, next) {
     const { skinDate, skinBathDuration, comment, skinColor } = req.body;
     const { _id: userId } = req.user;
-
+console.log(userId)
     newSkin(skinDate, skinBathDuration, comment, skinColor, userId)
     .then(skin => res.status(200).json(skin))
     .catch(next);
