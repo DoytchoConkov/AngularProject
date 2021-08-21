@@ -15,7 +15,6 @@
       <tbody *ngFor="let skin of skins">
         <td>{{skin.skinDate | date:'dd/MM/YYYY'}}</td>
         <td>{{skin.skinBathDuration}} min.</td>
-        <td>{{skin.userId.email}} min.</td>
         <td class="skin-colors">
           <container-element [ngSwitch]=skin.skinColor>
             <p *ngSwitchCase="1" style="background: #F8D1AE;"></p>

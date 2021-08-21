@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
-
+import { UserService } from '../user/user.service';
 @Directive({
   selector: '[appCustomValidator]',
   providers: [

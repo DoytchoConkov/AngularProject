@@ -153,7 +153,7 @@
                 <div class="new-skin-buttons">
                     <button name="dayDuration" type="submit" (click)="calculateDailyDuration()">Calculate</button>
                 </div>
-                <div *ngIf="calculatedDuration">You need {{calculatedDuration}} minutes per day for wanted tan.
+                <div *ngIf="calculatedDuration" class="result">You need <span>{{calculatedDuration}} minutes</span> per day for wanted tan.
                     <p class="warning">
                         This is for example. Be carefur with sun baths!
                     </p>
@@ -167,7 +167,7 @@
                 <div class="new-skin-buttons">
                     <button name="days" type="submit" (click)="calculateDays()">Calculate</button>
                 </div>
-                <div *ngIf="calculatedDays">After {{calculatedDays}} day you will have wanted tan.
+                <div *ngIf="calculatedDays" class="result">After <span>{{calculatedDays}} days</span> you will have wanted tan.
                     <p class="warning">
                         This is for example. Be carefur with sun baths!
                     </p>

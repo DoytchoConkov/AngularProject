@@ -13,6 +13,7 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnDestroy {
 
   killSubscription = new Subject();
+  wrongEmail: boolean;
 
   form: FormGroup;
   ifExist= false;
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnDestroy {
     private userService: UserService,
     private router: Router
   ) {
+    this.wrongEmail=false;
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, emailValidator,emailIsExist]],
@@ -38,6 +40,7 @@ export class RegisterComponent implements OnDestroy {
         this.router.navigate(['/']);
       },
       error: (err) => {
+        if(err.status==409)this.wrongEmail=true;
       }
     })
   }

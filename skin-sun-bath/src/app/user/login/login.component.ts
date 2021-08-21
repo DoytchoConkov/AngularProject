@@ -12,12 +12,13 @@ import { UserService } from '../user.service';
 export class LoginComponent {
 
   emailValidator = emailValidator;
+  wrongEmailPassword: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {this.wrongEmailPassword=false; }
 
   login(form: NgForm): void {
     if (form.invalid) { return; }
@@ -28,7 +29,7 @@ export class LoginComponent {
         this.router.navigate([redirectUrl]);
       },
       error: (err) => {
-        console.log(err);
+        if(err.status==401)this.wrongEmailPassword=true;
       }
     });
   }

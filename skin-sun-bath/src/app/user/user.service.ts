@@ -31,12 +31,6 @@ export class UserService {
     );
   }
 
-  isEmailExist(email: string) {
-    return this.http.get<IUser>(`${apiURL}/users/isExist`, { withCredentials: true }).pipe(
-      tap((user) => user)
-    )
-  }
-
   getProfileInfo() {
     return this.http.get<IUser>(`${apiURL}/users/profile`, { withCredentials: true }).pipe(
       tap((user) => this.user = user)

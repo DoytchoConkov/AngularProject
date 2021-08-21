@@ -94,3 +94,17 @@ input[type="radio"]:checked + label {
  input {
    width: 50px;
  }
+ .result{
+   border: 2px solid black;
+   background: rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px;
+ }
+
+ .result span{
+  border: 2px solid black;
+   background: rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   padding: 2px;
+ }

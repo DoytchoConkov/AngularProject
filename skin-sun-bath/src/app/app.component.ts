@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ContentService } from './content.service';
-// import { IPost } from './shared/interfaces';
 import { UserService } from './user/user.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { UserService } from './user/user.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // recentPosts: IPost[] | undefined;
 
   toggleTemplate = false;
 

@@ -38,7 +38,7 @@
           Password must be at least 4 characters!
         </p>
       </ng-container>
-
+<p *ngIf="wrongEmailPassword" class="error">Wrong email or password.</p>
       <button>Login</button>
 
       <p class="text-center">

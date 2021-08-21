@@ -35,6 +35,7 @@ function getSkinCoeficiente(req, res, next) {
 }
 
 function newSkin(skinDate, skinBathDuration, comment, skinColor, userId) {
+   
     return skinModel.create({ skinDate, skinBathDuration, comment, skinColor, userId })
         .then(skin => {
             return Promise.all([
@@ -46,6 +47,7 @@ function newSkin(skinDate, skinBathDuration, comment, skinColor, userId) {
 function createSkin(req, res, next) {
     const { skinDate, skinBathDuration, comment, skinColor } = req.body;
     const { _id: userId } = req.user;
+
     newSkin(skinDate, skinBathDuration, comment, skinColor, userId)
         .then(skin => res.status(200).json(skin))
         .catch(next);
@@ -55,8 +57,8 @@ function subscribe(req, res, next) {
     const skinId = req.params.skinId;
     const { _id: userId } = req.user;
     skinModel.findByIdAndUpdate({ _id: skinId }, { $addToSet: { subscribers: userId } }, { new: true })
-        .then(updatedTheme => {
-            res.status(200).json(updatedTheme)
+        .then(updatedSkin => {
+            res.status(200).json(updatedSkin)
         })
         .catch(next);
 }

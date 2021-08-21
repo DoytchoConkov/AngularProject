@@ -1,7 +1,7 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { UserService } from '../user/user.service';
+
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
   if (!control.value) { return null; }
@@ -11,6 +11,8 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
 }
 
 export function emailIsExist(control: AbstractControl): ValidationErrors | null {
+  console.log(control.value)
+   
   return null;
 }
 

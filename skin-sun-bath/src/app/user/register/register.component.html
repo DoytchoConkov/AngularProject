@@ -70,6 +70,7 @@
           Repeat Password does not match password!
         </p>
       </ng-container>
+      <p *ngIf="wrongEmail" class="error">Email allready exist.</p>
 
       <button>Create Account</button>
 
