@@ -13,11 +13,11 @@ export class CalculatorComponent {
   nextClicked = false;
   calculatedDuration = 0;
   calculatedDays = 0;
-  coeficiente = 0;
+  coefficient = 0;
 
   constructor(private contentService: ContentService, private fb: FormBuilder) {
 
-    this.contentService.loadSkinCoeficente().subscribe(coef => this.coeficiente=coef);
+    this.contentService.loadSkinCoefficient().subscribe(coef => this.coefficient=coef);
 
     this.form = this.fb.group({
       skinColor: ['', [Validators.required]],
@@ -35,11 +35,11 @@ export class CalculatorComponent {
 
   public calculateDailyDuration(): void {
     let { skinColor, skinWantedColor, days, dayDuration } = this.form.value
-    this.calculatedDuration = Math.floor( this.coeficiente*(skinWantedColor - skinColor) /days )
+    this.calculatedDuration = Math.floor( this.coefficient*(skinWantedColor - skinColor) /days )
   }
   public calculateDays(): void {
     let { skinColor, skinWantedColor, days, dayDuration } = this.form.value
-    this.calculatedDays = Math.floor( this.coeficiente*(skinWantedColor - skinColor)/dayDuration )
+    this.calculatedDays = Math.floor( this.coefficient*(skinWantedColor - skinColor)/dayDuration )
   }
 
 }

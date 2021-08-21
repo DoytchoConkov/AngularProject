@@ -22,8 +22,8 @@ export class ContentService {
     return this.http.get<Skin[]>(`${API_URL}/skins?email=${email}`, { withCredentials: true });
   }
 
-  loadSkinCoeficente() {
-    return this.http.get<number>(`${API_URL}/skins/skins-coeficiente`, { withCredentials: true });
+  loadSkinCoefficient() {
+    return this.http.get<number>(`${API_URL}/skins/skins-coefficient`, { withCredentials: true });
   }
 
   saveSkin(data: any) {
