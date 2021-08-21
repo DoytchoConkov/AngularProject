@@ -35,7 +35,7 @@ function newSkin(skinDate, skinBathDuration, comment, skinColor, userId) {
     return skinModel.create({ skinDate, skinBathDuration, comment, skinColor, userId })
         .then(skin => {
             return Promise.all([
-                userModel.updateOne({ _id: userId }, { $push: { posts: skin._id } }),
+                userModel.updateOne({ _id: userId }, { $push: { skins: skin._id } }),
             ])
         })
 }
