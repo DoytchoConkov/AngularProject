@@ -17,7 +17,7 @@ export class SkinsComponent {
 
   skins: Skin[] | undefined;
   recentSkins: Skin[] | undefined;
-
+  haveSkins=false;
   constructor(
     private contentService: ContentService,
     private userService: UserService
@@ -27,6 +27,6 @@ export class SkinsComponent {
 
   fetchSkins(): void {
     this.skins = undefined;
-    this.contentService.loadSkins(this.userService.user?.email!).subscribe(skins => this.skins = skins);
+    this.contentService.loadSkins(this.userService.user?.email!).subscribe(skins =>{ this.skins = skins;this.haveSkins=this.skins.length>0;});
   }
 }

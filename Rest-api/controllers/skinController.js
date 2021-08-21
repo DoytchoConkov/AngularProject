@@ -4,7 +4,7 @@ const { skinModel, userModel } = require('../models');
 
 
 function getSkins(req, res, next) {
-    let { email, limit } = req.query;
+    let { email } = req.query;
     // skinModel.find()
         userModel.findOne({ email: email })
         .populate('skins')
@@ -14,18 +14,20 @@ function getSkins(req, res, next) {
 }
 
 function getSkinCoeficiente(req, res, next) {
-    skinModel.find()
-        .populate('userId')
-        .then(skins => {
+    let { email } = req.query;
+    userModel.findOne({ email: email })
+        .populate('skins')
+        .then(user => {
             let minSkin = 24;
             let maxSkin = 0;
             let duration = 0;
-            for (let index = 0; index < skins.length; index++) {
-                if (minSkin > skins[index].skinColor) { minSkin = skins[index].skinColor; }
-                if (maxSkin < skins[index].skinColor) { maxSkin = skins[index].skinColor; }
-                duration += +skins[index].skinBathDuration;
+            for (let index = 0; index < user.skins.length; index++) {
+                if (minSkin > user.skins[index].skinColor) { minSkin = user.skins[index].skinColor; }
+                if (maxSkin < user.skins[index].skinColor&&user.skins[index].skinColor<19) { maxSkin = user.skins[index].skinColor; }
+                duration += +user.skins[index].skinBathDuration;
             }
             let result = duration / (maxSkin - minSkin)
+            console.log(result)
             return res.json(result)
         })
         .catch(next);

@@ -93,7 +93,7 @@ function getProfileInfo(req, res, next) {
 function getIfExist(req, res, next) {
     const { email: email } = req.user;
 
-    userModel.findOne({ _id: userId }, { password: 0, __v: 0 })
+    userModel.findOne({ email: email })
         .then(user => { res.status(200).json(user) })
         .catch(next);
 }

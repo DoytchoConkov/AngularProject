@@ -2,7 +2,8 @@
     <div class="header-background">
         <h2>Skin Tan Calculator</h2>
     </div>
-    <form [formGroup]='form' (ngSubmit)="onSubmit()">
+    
+    <form [formGroup]='form' (ngSubmit)="onSubmit()" *ngIf="coefficient">
 
         <p class="skin-lists">Please choose your current skin color:</p>
         <div class="skin-colors">
@@ -174,4 +175,5 @@
             </div>
         </div>
     </form>
+    <div *ngIf="!coefficient">You must have valid skins !!!</div>
 </section>
