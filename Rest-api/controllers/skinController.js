@@ -1,4 +1,4 @@
-const { skin, skinModel } = require('../models');
+const { skinModel,userModel } = require('../models');
 
 function getSkins(req, res, next) {
     skinModel.find()
@@ -7,12 +7,32 @@ function getSkins(req, res, next) {
         .catch(next);
 }
 
+function getSkinCoeficiente(req, res, next) {
+    skinModel.find()
+        .populate('userId')
+        .then(skins => {
+            console.log(skins)
+            let minSkin = 24;
+            let maxSkin = 0;
+            let duration = 0;
+            for (let index = 0; index < skins.length; index++) {
+                if (minSkin > skins[index].skinColor) { minSkin = skins[index].skinColor; }
+                if (maxSkin < skins[index].skinColor) { maxSkin = skins[index].skinColor; }
+                duration += +skins[index].skinBathDuration;
+            }
+            let result =  duration/(maxSkin - minSkin)
+            return res.json( result )
+        })
+        .catch(next);
+}
+
 function createSkin(req, res, next) {
     const { skinDate, skinBathDuration, comment, skinColor } = req.body;
     const { _id: userId } = req.user;
+    console.log(skinDate, skinBathDuration, comment, skinColor)
     skinModel.create({ skinDate, skinBathDuration, comment, skinColor })
-    .then(skin =>  res.status(200).json(skin)
-    )
+        .then(skin => res.status(200).json(skin)
+        )
         .catch(next);
 }
 
@@ -30,4 +50,5 @@ module.exports = {
     getSkins,
     createSkin,
     subscribe,
+    getSkinCoeficiente
 }

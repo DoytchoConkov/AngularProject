@@ -43,7 +43,7 @@ function register(req, res, next) {
 }
 
 function login(req, res, next) {
-    const { email, password } = req.body;    
+    const { email, password } = req.body;
     userModel.findOne({ email })
         .then(user => {
             return Promise.all([user, user ? user.matchPassword(password) : false]);
@@ -85,7 +85,15 @@ function logout(req, res) {
 function getProfileInfo(req, res, next) {
     const { _id: userId } = req.user;
 
-    userModel.findOne({ _id: userId }, { password: 0, __v: 0 }) 
+    userModel.findOne({ _id: userId }, { password: 0, __v: 0 })
+        .then(user => { res.status(200).json(user) })
+        .catch(next);
+}
+
+function getIfExist(req, res, next) {
+    const { email: email } = req.user;
+
+    userModel.findOne({ _id: userId }, { password: 0, __v: 0 })
         .then(user => { res.status(200).json(user) })
         .catch(next);
 }
@@ -105,4 +113,5 @@ module.exports = {
     logout,
     getProfileInfo,
     editProfileInfo,
+    getIfExist
 }

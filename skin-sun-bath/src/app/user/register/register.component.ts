@@ -15,7 +15,7 @@ export class RegisterComponent implements OnDestroy {
   killSubscription = new Subject();
 
   form: FormGroup;
-
+  ifExist= false;
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnDestroy {
   ) {
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, emailValidator, emailIsExist]],
+      email: ['', [Validators.required, emailValidator]],
       password: ['', [Validators.required, Validators.minLength(5)]],
       rePassword: ['', [Validators.required, sameValueAsFactory(
         () => this.form?.get('password'), this.killSubscription
@@ -38,7 +38,6 @@ export class RegisterComponent implements OnDestroy {
         this.router.navigate(['/']);
       },
       error: (err) => {
-        console.error(err);
       }
     })
   }

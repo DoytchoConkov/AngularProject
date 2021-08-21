@@ -46,10 +46,9 @@ button + button {
   border-radius: 0.3em;
 }
 
-p.error,
+p.warning,
 .red {
-  text-align: left;
-  border-radius: 0.3em;
+  font-size: small;
   color: red;
   padding-top: 0;
 }
@@ -92,3 +91,6 @@ input[type="radio"]:checked + label {
   justify-content: space-around;
   margin-top: 30px;
 }
+ input {
+   width: 50px;
+ }

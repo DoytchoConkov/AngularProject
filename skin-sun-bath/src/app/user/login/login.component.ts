@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-// import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { emailValidator } from 'src/app/shared/validators';
 import { UserService } from '../user.service';
 
@@ -12,11 +10,6 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
-  icons = {
-    // faEnvelope,
-    // faLock
-  };
 
   emailValidator = emailValidator;
 

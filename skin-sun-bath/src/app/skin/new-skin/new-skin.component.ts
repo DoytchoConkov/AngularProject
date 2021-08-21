@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { ContentService } from 'src/app/content.service';
+import {skinDateExist } from 'src/app/shared/validators';
+
 
 @Component({
   selector: 'skinsunbath-new-skin',
@@ -18,7 +20,7 @@ export class NewSkinComponent implements OnDestroy{
     private contentService: ContentService,
     private router: Router
   ) {this.form = this.fb.group({
-    skinDate: ['', [Validators.required, Validators.minLength(4)]],
+    skinDate: ['', [Validators.required, skinDateExist]],
     skinBathDuration: ['', [Validators.required]],
     comment: [],
     skinColor: ['', [Validators.required]]

@@ -6,7 +6,6 @@ class GlobalErrorHandler implements ErrorHandler {
   constructor(private router: Router) { }
 
   handleError(error: Error) {
-    console.log(error);
     this.router.navigate(['/error'], { queryParams: { error: 'Ooops! Something went wrong!' } });
   }
 }

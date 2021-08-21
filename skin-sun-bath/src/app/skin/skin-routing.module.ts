@@ -12,11 +12,19 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: SkinsComponent
+        component: SkinsComponent, canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          authenticationFailureRedirectUrl: '/login',
+        }
       },
       {
         path: ':calculate',
-        component: CalculatorComponent
+        component: CalculatorComponent, canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          authenticationFailureRedirectUrl: '/login',
+        }
       }
     ]
   },

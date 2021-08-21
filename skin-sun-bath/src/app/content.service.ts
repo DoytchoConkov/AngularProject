@@ -11,12 +11,19 @@ export class ContentService {
   constructor(private http: HttpClient) { }
 
   loadSkin(id: string) {
-    console.log(id)
     return this.http.get<Skin>(`${API_URL}/skins/${id}`, { withCredentials: true });
+  }
+
+  isDayValid(day: string) {
+    return this.http.get<Skin>(`${API_URL}/skins?day=${day}`, { withCredentials: true });
   }
 
   loadSkins() {
     return this.http.get<Skin[]>(`${API_URL}/skins`, { withCredentials: true });
+  }
+
+  loadSkinCoeficente() {
+    return this.http.get<number>(`${API_URL}/skins/skins-coeficiente`, { withCredentials: true });
   }
 
   loadBestSkins(limit?: number) {

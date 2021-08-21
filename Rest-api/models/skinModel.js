@@ -4,20 +4,19 @@ const { ObjectId } = mongoose.Schema.Types;
 const skinSchema = new mongoose.Schema({
     skinDate: {
         type: String,
-        unique: true,
         required: true
     },
     skinBathDuration: {
-        type: Number,
-        required: false
+        type: String,
+        required: true
     },
     skinColor: {
-        type: String,
+        type: Number,
         required: true
     },
     comment: {
         type: String,
-        required: true
+        required: false
     },
     userId: {
         type: ObjectId,

@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
-import { switchMap, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { UserService } from '../user/user.service';
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
@@ -11,9 +11,11 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
 }
 
 export function emailIsExist(control: AbstractControl): ValidationErrors | null {
-  
   return null;
-  // return { emailIsExist: true };
+}
+
+export function skinDateExist(control: AbstractControl): ValidationErrors | null {
+  return null;
 }
 
 export function sameValueAsFactory(getTargetControl: () => AbstractControl | null, killSubscriptions: Observable<any>) {

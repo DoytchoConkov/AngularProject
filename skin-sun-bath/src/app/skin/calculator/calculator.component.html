@@ -152,14 +152,24 @@
                 <div class="new-skin-buttons">
                     <button name="dayDuration" type="submit" (click)="calculateDailyDuration()">Calculate</button>
                 </div>
+                <div *ngIf="calculatedDuration">You need {{calculatedDuration}} minutes per day for wanted tan.
+                    <p class="warning">
+                        This is for example. Be carefur with sun baths!
+                    </p>
+                </div>
             </div>
             <div class="duration">
-                <label for="dayDuration">Enter duration of sun bath per day:
+                <label for="dayDuration">Enter daily duration in minutes:
                     <input type="number" name="dayDuration" id="dayDuration" formControlName="dayDuration" min="0"
                         max="720"></label>
 
                 <div class="new-skin-buttons">
                     <button name="days" type="submit" (click)="calculateDays()">Calculate</button>
+                </div>
+                <div *ngIf="calculatedDays">After {{calculatedDays}} day you will have wanted tan.
+                    <p class="warning">
+                        This is for example. Be carefur with sun baths!
+                    </p>
                 </div>
             </div>
         </div>

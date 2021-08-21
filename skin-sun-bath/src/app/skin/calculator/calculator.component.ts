@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContentService } from 'src/app/content.service';
 
 @Component({
   selector: 'app-calculator',
@@ -10,8 +11,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CalculatorComponent {
   form: FormGroup;
   nextClicked = false;
-  constructor(private fb: FormBuilder,) {
-    this.form=this.fb.group({
+  calculatedDuration = 0;
+  calculatedDays = 0;
+  coeficiente = 0;
+
+  constructor(private contentService: ContentService, private fb: FormBuilder) {
+
+    this.contentService.loadSkinCoeficente().subscribe(coef => this.coeficiente=coef);
+
+    this.form = this.fb.group({
       skinColor: ['', [Validators.required]],
       skinWantedColor: ['', [Validators.required]],
       days: ['', [Validators.required]],
@@ -26,10 +34,12 @@ export class CalculatorComponent {
   }
 
   public calculateDailyDuration(): void {
-console.log(this.form)
+    let { skinColor, skinWantedColor, days, dayDuration } = this.form.value
+    this.calculatedDuration = Math.floor( this.coeficiente*(skinWantedColor - skinColor) /days )
   }
   public calculateDays(): void {
-    console.log(this.form)
+    let { skinColor, skinWantedColor, days, dayDuration } = this.form.value
+    this.calculatedDays = Math.floor( this.coeficiente*(skinWantedColor - skinColor)/dayDuration )
   }
 
 }

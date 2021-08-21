@@ -37,8 +37,7 @@
         <p *ngIf="form.get('email')?.errors?.invalidEmail" class="error">
           Email is not valid!
         </p>
-        <!-- <p *ngIf="form.get('email').errors.nonUniqueUsername">Email is taken</p>
-        <p *ngIf="form.get('email').errors.noConnection">Can't tell if email is taken</p> -->
+        <p *ngIf="ifExist">Email is allready exist.</p>
       </ng-container>
 
       <p class="field field-icon">

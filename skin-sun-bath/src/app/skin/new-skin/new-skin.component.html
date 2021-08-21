@@ -8,8 +8,9 @@
       <label for="skinDate">Date:
         <input type="date" name="skinDate" id="skinDate" formControlName="skinDate" required></label>
       <ng-container *ngIf="form.get('skinDate')?.touched">
-        <p *ngIf="form.get('skinDate')?.errors?.required" class="error">
-          Date is required.
+        <p *ngIf="form.get('skinDate')?.errors?.required" class="error"> Date is required.</p>
+        <p *ngIf="form.get('skinDate')?.errors?.skinDateExist" class="error">
+          Date is exist.
         </p>
       </ng-container>
       <label for="skinBathDuration">Sun Bath Duration in munutes:
