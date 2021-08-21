@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContentService } from 'src/app/content.service';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-calculator',
@@ -15,9 +16,9 @@ export class CalculatorComponent {
   calculatedDays = 0;
   coefficient = 0;
 
-  constructor(private contentService: ContentService, private fb: FormBuilder) {
+  constructor(private contentService: ContentService, private fb: FormBuilder,private userService: UserService) {
 
-    this.contentService.loadSkinCoefficient().subscribe(coef => this.coefficient=coef);
+    this.contentService.loadSkinCoefficient(this.userService.user?.email!).subscribe(coef => this.coefficient=coef);
 
     this.form = this.fb.group({
       skinColor: ['', [Validators.required]],
