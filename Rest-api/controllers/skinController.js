@@ -51,7 +51,6 @@ function newSkin(skinDate, skinBathDuration, comment, skinColor, userId) {
                         ])
                     })
             } else {
-                console.log(skin._id)
                 return skinModel.findOneAndUpdate({ _id: skin._id }, { skinDate, skinBathDuration, comment, skinColor })
             }
         })
@@ -63,7 +62,6 @@ function createSkin(req, res, next) {
 
     newSkin(skinDate, skinBathDuration, comment, skinColor, userId)
         .then(skin => {
-            console.log(skin)
             res.status(200).json(skin)
         })
         .catch(next);

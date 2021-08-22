@@ -91,7 +91,6 @@ function getProfileInfo(req, res, next) {
 }
 
 function getIfExist(req, res, next) {
-    console.log(req.body.email)
     const { email: email } = req.body;
     userModel.findOne({ email: email })
         .then(user => {

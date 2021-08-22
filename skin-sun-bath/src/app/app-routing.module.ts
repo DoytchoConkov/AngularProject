@@ -15,6 +15,14 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+  },
+  {
+    path: 'skin',
+    loadChildren: () => import('./skin/skin.module').then(m => m.SkinModule)
+  },
+  {
         path: 'error',
         component: ErrorComponent
       },
