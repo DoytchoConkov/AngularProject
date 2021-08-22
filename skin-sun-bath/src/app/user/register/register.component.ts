@@ -2,8 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { emailValidator, sameValueAsFactory, emailIsExist } from 'src/app/shared/validators';
+import { emailValidator, sameValueAsFactory } from 'src/app/shared/validators';
 import { UserService } from '../user.service';
+import { UniqueEmail } from '../unique-email';
 
 @Component({
   selector: 'skinsunbath-register',
@@ -13,19 +14,19 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnDestroy {
 
   killSubscription = new Subject();
-  wrongEmail: boolean;
 
   form: FormGroup;
-  ifExist= false;
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private UniqueEmail: UniqueEmail
   ) {
-    this.wrongEmail=false;
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, emailValidator,emailIsExist]],
+      email: ['', [Validators.required, emailValidator]
+      ,this.UniqueEmail.validate
+    ],
       password: ['', [Validators.required, Validators.minLength(5)]],
       rePassword: ['', [Validators.required, sameValueAsFactory(
         () => this.form?.get('password'), this.killSubscription
@@ -39,8 +40,7 @@ export class RegisterComponent implements OnDestroy {
       next: () => {
         this.router.navigate(['/']);
       },
-      error: (err) => {
-        if(err.status==409)this.wrongEmail=true;
+      error: (err) => { 
       }
     })
   }

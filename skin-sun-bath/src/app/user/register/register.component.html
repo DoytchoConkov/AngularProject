@@ -9,18 +9,18 @@
           <span>
           </span>
         </label>
-        <input class="input-error" type="text" name="username" id="username" placeholder="Firstname Lastname"
+        <input class="input-error" type="text" name="username" id="username" placeholder="Username"
           formControlName="username" pattern="[a-zA-Z'-'\s]*">
       </p>
       <ng-container *ngIf="form.get('username')?.touched">
         <p *ngIf="form.get('username')?.errors?.required" class="error">
-          Fullname is required!
+          Username is required!
         </p>
         <p *ngIf="form.get('username')?.errors?.minlength" class="error">
-          Fullname should be more than 5
+          Username should be more than 5
         </p>
         <p *ngIf="form.get('username')?.errors?.pattern" class="error">
-          Fullname should contain Firstname and Lastname
+          Username should contain Firstname and Lastname
         </p>
       </ng-container>
 
@@ -37,7 +37,7 @@
         <p *ngIf="form.get('email')?.errors?.invalidEmail" class="error">
           Email is not valid!
         </p>
-        <p *ngIf="ifExist">Email is allready exist.</p>
+        <p *ngIf="form.get('email')?.errors?.nonUniqueEmail" class="error">Email is allready exist.</p>
       </ng-container>
 
       <p class="field field-icon">
@@ -70,7 +70,6 @@
           Repeat Password does not match password!
         </p>
       </ng-container>
-      <p *ngIf="wrongEmail" class="error">Email allready exist.</p>
 
       <button>Create Account</button>
 

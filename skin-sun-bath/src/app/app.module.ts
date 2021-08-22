@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ContentService } from './content.service';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
-import {SkinModule} from './skin/skin.module';
+import { SkinModule } from './skin/skin.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';

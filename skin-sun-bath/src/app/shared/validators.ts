@@ -10,16 +10,6 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
   };
 }
 
-export function emailIsExist(control: AbstractControl): ValidationErrors | null {
-  console.log(control.value)
-   
-  return null;
-}
-
-export function skinDateExist(control: AbstractControl): ValidationErrors | null {
-  return null;
-}
-
 export function sameValueAsFactory(getTargetControl: () => AbstractControl | null, killSubscriptions: Observable<any>) {
   let subscription: Subscription | null = null;
   return function (control: AbstractControl) {

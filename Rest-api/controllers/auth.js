@@ -86,15 +86,22 @@ function getProfileInfo(req, res, next) {
     const { _id: userId } = req.user;
 
     userModel.findOne({ _id: userId }, { password: 0, __v: 0 })
-        .then(user => { res.status(200).json(user) })
+        .then(user => { res.status(200).json(user == undefined) })
         .catch(next);
 }
 
 function getIfExist(req, res, next) {
-    const { email: email } = req.user;
-
+    console.log(req.body.email)
+    const { email: email } = req.body;
     userModel.findOne({ email: email })
-        .then(user => { res.status(200).json(user) })
+        .then(user => {
+            if (user) {
+                return res.status(401).json(email)
+            } else {
+                return res.status(200).json(email)
+            }
+        }
+        )
         .catch(next);
 }
 
@@ -102,7 +109,7 @@ function editProfileInfo(req, res, next) {
     const { _id: userId } = req.user;
     const { tel, username, email } = req.body;
 
-    userModel.findOneAndUpdate({ _id: userId }, { tel, username, email }, { runValidators: true, new: true })
+    userModel.findOneAndUpdate({ _id: userId }, { username, email }, { runValidators: true, new: true })
         .then(x => { res.status(200).json(x) })
         .catch(next);
 }
