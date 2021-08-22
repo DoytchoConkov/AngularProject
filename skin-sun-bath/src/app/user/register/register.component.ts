@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { emailValidator, sameValueAsFactory } from 'src/app/shared/validators';
-import { UserService } from '../user.service';
-import { UniqueEmail } from '../unique-email';
+import { UserService } from '../../core/services/user.service';
+import { UniqueEmail } from '../../shared/unique-email';
 
 @Component({
   selector: 'skinsunbath-register',

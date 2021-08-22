@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
-import { ContentService } from 'src/app/content.service';
+import { ContentService } from 'src/app/core/services/content.service';
 
 
 @Component({

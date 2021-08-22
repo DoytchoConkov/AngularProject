@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
-import { IUser } from '../shared/interfaces';
+import { environment } from '../../../environments/environment';
+import { IUser } from '../../shared/interfaces';
 
 const apiURL = environment.apiURL;
 

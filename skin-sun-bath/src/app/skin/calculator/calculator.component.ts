@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ContentService } from 'src/app/content.service';
-import { UserService } from 'src/app/user/user.service';
+import { ContentService } from 'src/app/core/services/content.service';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-calculator',

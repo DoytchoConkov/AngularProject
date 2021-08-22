@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Skin } from './shared/interfaces';
+import { Skin } from 'src/app/shared/interfaces/skin';
 
-import { environment } from '../environments/environment';
+import { environment } from 'src/environments/environment';
 const API_URL = environment.apiURL;
 
 @Injectable()

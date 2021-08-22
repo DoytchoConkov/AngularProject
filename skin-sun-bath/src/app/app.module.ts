@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContentService } from './content.service';
+import { ContentService } from './core/services/content.service';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { SkinModule } from './skin/skin.module';
