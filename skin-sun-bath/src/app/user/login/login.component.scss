@@ -1,14 +1,4 @@
-/*login register forms  */
-
-form.login,
-form.register {
-  width: 40%;
-  margin: 2em auto 0;
-  text-align: center;
-}
-
-.login fieldset,
-.register fieldset {
+.login fieldset {
   border-radius: 0.3em;
   padding: 0.8em;
   background: rgba(0, 0, 0, 0.3);
@@ -21,14 +11,26 @@ form.register {
   color: white;
 }
 
-.login p,
-.register p {
+.login p {
   padding-bottom: 0;
   padding-top: 1.5rem;
 }
 
-.login input,
-.register input {
+.login select {
+  border-color: black;
+}
+
+
+.login a:hover{
+  cursor: pointer;
+}
+
+.login .field {
+  display: flex;
+  padding-bottom: 0;
+}
+
+.login input {
   flex: 0 1 100%;
   border: 1px solid;
   padding: 0.3em;
@@ -37,13 +39,17 @@ form.register {
   border-bottom-right-radius: 0.3em;
 }
 
-.login select,
-.register select {
-  border-color: black;
+form.login {
+  width: 40%;
+  margin: 2em auto 0;
+  text-align: center;
 }
 
-.login button,
-.register button {
+.login a {
+  color: #025ec0;
+}
+
+.login button {
   border: none;
   border-radius: 0.3em;
   padding: 0.6em 1.2em;
@@ -51,55 +57,4 @@ form.register {
   width: 60%;
   outline: none;
   color: chocolate;
-}
-
-.login fa-icon,
-.register fa-icon {
-  border: 1px solid;
-  border-right: none;
-  padding: 0.55em;
-  border-top-left-radius: 0.3em;
-  border-bottom-left-radius: 0.3em;
-  background-color: #c19a6b;
-}
-
-.login a,
-.register a {
-  color: #007bff;
-}
-
-.login a:hover,
-.register a:hover {
-  cursor: pointer;
-}
-
-.login .field,
-.register .field {
-  display: flex;
-  padding-bottom: 0;
-}
-
-h2 {
-  color: #3b2f2f;
-}
-
-/* errors  */
-
-p.error {
-  text-align: left;
-  border-radius: 0.3em;
-  color: red;
-  padding-top: 0;
-}
-
-.input-error {
-  border-left-color: red;
-}
-
-input:invalid {
-  border: 2px solid red;
-}
-
-input:valid {
-  border: 2px solid rgb(39, 245, 39);
 }

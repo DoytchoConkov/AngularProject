@@ -1,28 +1,36 @@
-form.login, form.register {
-  width: 40%;
-  margin: 2em auto 0;
-  text-align: center;
-}
-
-.login fieldset, .register fieldset {
+.register fieldset {
   border-radius: 0.3em;
   padding: 0.8em;
-  background: rgba(0, 0, 0, 0.3)
+  background: rgba(0, 0, 0, 0.3);
 }
 
- .register h2 {
+.register h2 {
   padding-top: 0;
   border-bottom: none;
   background-color: #a67b5b;
   color: white;
 }
 
-.login p, .register p {
+.register p {
   padding-bottom: 0;
   padding-top: 1.5rem;
 }
 
-.login input, .register input {
+.register select {
+  border-color: black;
+}
+
+
+.register a:hover {
+  cursor: pointer;
+}
+
+.register .field {
+  display: flex;
+  padding-bottom: 0;
+}
+
+.register input {
   flex: 0 1 100%;
   border: 1px solid;
   padding: 0.3em;
@@ -31,67 +39,22 @@ form.login, form.register {
   border-bottom-right-radius: 0.3em;
 }
 
-.login select, .register select {
-  border-color: black;
+form.register {
+  width: 40%;
+  margin: 2em auto 0;
+  text-align: center;
 }
 
-.login button, .register button {
-  color: chocolate;
+.register a {
+  color: #025ec0;
+}
+
+.register button {
   border: none;
   border-radius: 0.3em;
   padding: 0.6em 1.2em;
   margin-top: 1.5rem;
   width: 60%;
   outline: none;
-}
-
-.login i, .register i {
-  border: 1px solid;
-  border-right: none;
-  padding: 0.55em;
-  border-top-left-radius: 0.3em;
-  border-bottom-left-radius: 0.3em;
-  background-color:  #C19A6B;
-}
-
-.login a, .register a {
-  color: #007bff;
-}
-
-.login a:hover, .register a:hover {
-  cursor: pointer;
-}
-
-.register .tel {
-  padding-right: 0.8em;
-}
-
-.login .field, .register .field {
-  display: flex;
-  padding-bottom: 0;
-}
-
-h2{
-  color: #3B2F2F;
-}
-
-/* errors  */
-
-p.error {
-  text-align: left;
-  border-radius: 0.3em;
-  color: red;
-  padding-top: 0;
-}
-
-.input-error {
-  border-left-color: red;
-}
-
-input:invalid {
-  border: 2px solid red;
-}
-
-input:valid {
-  border: 2px solid rgb(39, 245, 39);
+  color: chocolate;
 }
