@@ -14,10 +14,6 @@ export class ContentService {
     return this.http.get<Skin>(`${API_URL}/skins/${id}`, { withCredentials: true });
   }
 
-  isDayValid(day: string) {
-    return this.http.get<Skin>(`${API_URL}/skins?day=${day}`, { withCredentials: true });
-  }
-
   loadSkins( email: string ) {
     return this.http.get<Skin[]>(`${API_URL}/skins?email=${email}`, { withCredentials: true });
   }

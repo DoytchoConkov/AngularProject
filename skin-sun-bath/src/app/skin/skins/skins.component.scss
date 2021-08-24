@@ -51,3 +51,10 @@ td {
   background-color: #a67b5b;
   color: white;
 }
+
+tbody tr:hover{
+  border: 2px solid #a67b5b;
+  background: white;
+  color: black;
+  cursor: pointer;
+}

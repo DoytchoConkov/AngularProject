@@ -1,5 +1,14 @@
 const { skinModel, userModel } = require('../models');
 
+function getSkin(req, res, next) {
+    const { skinId } = req.params;
+
+    skinModel.findById(skinId)
+        .populate('User')
+        .then(skin => res.json(skin))
+        .catch(next);
+}
+
 function getSkins(req, res, next) {
     let { email } = req.query;
     userModel.findOne({ email: email })
@@ -31,15 +40,6 @@ function getSkinCoeficiente(req, res, next) {
 }
 
 function newSkin(skinDate, skinBathDuration, comment, skinColor, userId) {
-
-
-    // return skinModel.create({ skinDate, skinBathDuration, comment, skinColor, userId })
-    // .then(skin => {
-    //     return Promise.all([
-    //         userModel.updateOne({ _id: userId }, { $push: { skins: skin._id } }),
-    //     ])
-    // })
-
 
     return skinModel.findOne({ skinDate: skinDate, userId: userId })
         .populate('User').then(skin => {
@@ -79,6 +79,7 @@ function subscribe(req, res, next) {
 
 module.exports = {
     newSkin,
+    getSkin,
     getSkins,
     createSkin,
     subscribe,

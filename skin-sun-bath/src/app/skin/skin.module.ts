@@ -6,12 +6,14 @@ import { SharedModule } from '../shared/shared.module';
 import { SkinsComponent } from './skins/skins.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SkinComponent } from './skin/skin.component';
 
 @NgModule({
   declarations: [
     NewSkinComponent,
     SkinsComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    SkinComponent
   ],
   imports: [
     CommonModule,
