@@ -18,7 +18,7 @@ export class CalculatorComponent {
 
   constructor(private contentService: ContentService, private fb: FormBuilder,private userService: UserService) {
 
-    this.contentService.loadSkinCoefficient(this.userService.user?.email!).subscribe(coef => this.coefficient=coef);
+    this.contentService.loadSkinCoefficient(this.userService.user?.email!).subscribe(coefficient => this.coefficient=coefficient);
 
     this.form = this.fb.group({
       skinColor: ['', [Validators.required]],

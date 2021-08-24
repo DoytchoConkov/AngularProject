@@ -13,7 +13,7 @@
           Date is exist.
         </p>
       </ng-container>
-      <label for="skinBathDuration">Sun Bath Duration in munutes:
+      <label for="skinBathDuration">Sun Bath Duration in minutes:
         <input type="number" name="skinBathDuration" id="skinBathDuration" formControlName="skinBathDuration" required
           min="0" max="720"></label>
       <ng-container *ngIf="form.get('skinBathDuration')?.touched">

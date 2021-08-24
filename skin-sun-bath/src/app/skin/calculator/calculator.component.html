@@ -2,7 +2,7 @@
     <div class="header-background">
         <h2>Skin Tan Calculator</h2>
     </div>
-    
+
     <form [formGroup]='form' (ngSubmit)="onSubmit()" *ngIf="coefficient">
 
         <p class="skin-lists">Please choose your current skin color:</p>
@@ -155,7 +155,7 @@
                 </div>
                 <div *ngIf="calculatedDuration" class="result">You need <span>{{calculatedDuration}} minutes</span> per day for wanted tan.
                     <p class="warning">
-                        This is for example. Be carefur with sun baths!
+                        This is for example. Be careful with sun baths!
                     </p>
                 </div>
             </div>
@@ -169,7 +169,7 @@
                 </div>
                 <div *ngIf="calculatedDays" class="result">After <span>{{calculatedDays}} days</span> you will have wanted tan.
                     <p class="warning">
-                        This is for example. Be carefur with sun baths!
+                        This is for example. Be careful with sun baths!
                     </p>
                 </div>
             </div>

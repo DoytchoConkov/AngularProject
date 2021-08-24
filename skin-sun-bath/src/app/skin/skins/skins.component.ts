@@ -5,7 +5,7 @@ import { UserService } from '../../core/services/user.service';
 
 
 @Component({
-  selector: 'app-skin',
+  selector: 'app-skins',
   templateUrl: './skins.component.html',
   styleUrls: ['./skins.component.scss']
 })

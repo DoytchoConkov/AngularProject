@@ -21,25 +21,22 @@ const routes: Routes = [
       },
       {
         path: ':skinId',
-        component: SkinComponent, canActivate: [AuthActivate],
-        data: {
-          authenticationRequired: true,
-          authenticationFailureRedirectUrl: '/login',
-        }
-      },
-      {
-        path: ':calculate',
-        component: CalculatorComponent, canActivate: [AuthActivate],
-        data: {
-          authenticationRequired: true,
-          authenticationFailureRedirectUrl: '/login',
-        }
+        component: SkinComponent
       }
     ]
   },
   {
     path: 'add-skin',
     component: NewSkinComponent,
+    canActivate: [AuthActivate],
+    data: {
+      authenticationRequired: true,
+      authenticationFailureRedirectUrl: '/login',
+    }
+  },
+  {
+    path: ':calculate',
+    component: CalculatorComponent, 
     canActivate: [AuthActivate],
     data: {
       authenticationRequired: true,
