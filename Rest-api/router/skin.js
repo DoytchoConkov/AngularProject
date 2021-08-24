@@ -4,7 +4,7 @@ const { auth } = require('../utils');
 const { skinController } = require('../controllers');
 
 router.get('/', skinController.getSkins);
-router.get('/skins-coefficient', skinController.getSkinCoeficiente);
+router.get('/skins-coefficient', skinController.getSkinCoefficient);
 router.get('/:skinId', skinController.getSkin);
 router.post('/', auth(), skinController.createSkin);
 

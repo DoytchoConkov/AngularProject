@@ -20,7 +20,7 @@ function getSkins(req, res, next) {
         .catch(next);
 }
 
-function getSkinCoeficiente(req, res, next) {
+function getSkinCoefficient(req, res, next) {
     let { email } = req.query;
     userModel.findOne({ email: email })
         .populate('skins')
@@ -83,5 +83,5 @@ module.exports = {
     getSkins,
     createSkin,
     subscribe,
-    getSkinCoeficiente
+    getSkinCoefficient
 }
