@@ -4,14 +4,12 @@ import { WelcomeMessageComponent } from './welcome-message/welcome-message.compo
 import { RouterModule } from '@angular/router';
 import { CustomValidatorDirective } from './custom-validator.directive';
 import { ShortenPipe } from './pipes/shorten.pipe';
-import { TimeDiffPipe } from './pipes/time-diff.pipe';
 
 @NgModule({
   declarations: [
     WelcomeMessageComponent,
     CustomValidatorDirective,
-    ShortenPipe,
-    TimeDiffPipe
+    ShortenPipe
   ],
   imports: [
     CommonModule,
@@ -20,8 +18,7 @@ import { TimeDiffPipe } from './pipes/time-diff.pipe';
   exports: [
     WelcomeMessageComponent,
     CustomValidatorDirective,
-    ShortenPipe,
-    TimeDiffPipe
+    ShortenPipe
   ]
 })
 export class SharedModule { }

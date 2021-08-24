@@ -6,10 +6,10 @@
     <table>
       <thead>
         <tr>
-          <td>Date</td>
-          <td>Duration</td>
-          <td>Skin Tan</td>
-          <td>Comment</td>
+          <th>Date</th>
+          <th>Duration</th>
+          <th>Skin Tan</th>
+          <th>Comment</th>
         </tr>
       </thead>
       <tbody *ngFor="let skin of skins">
@@ -37,7 +37,7 @@
             <p *ngSwitchCase="18" style="background: #8E6F54;"></p>
           </container-element>
         </td>
-        <td>{{skin.comment}}</td>
+        <td>{{skin.comment | shorten : 25}}</td>
       </tbody>
     </table>
   </section>
