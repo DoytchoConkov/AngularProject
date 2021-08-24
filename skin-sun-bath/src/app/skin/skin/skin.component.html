@@ -1,35 +1,32 @@
-<section  *ngIf="skin" class="container" [routerLink]="['/skin']">
-    <div class="header-background">
-        <h2>Skin for day: {{skin.skinDate | date:'dd/MM/YYYY'}}</h2>
-      </div>
-            <div class="skin-name-wrapper" [routerLink]="['/skin', skin._id]">
-              <div class="skin-container">
-                <p>Sun Bath Duration: {{skin.skinBathDuration}} minutes</p>
-                <p class="skin-colors">Skin Tan:
-                  <container-element [ngSwitch]=skin.skinColor>
-                    <p *ngSwitchCase="1" style="background: #F8D1AE;"></p>
-                    <p *ngSwitchCase="2" style="background: #F9C99D;"></p>
-                    <p *ngSwitchCase="3" style="background: #F4BF96;"></p>
-                    <p *ngSwitchCase="4" style="background: #F3C996;"></p>
-                    <p *ngSwitchCase="5" style="background: #F3C18A;"></p>
-                    <p *ngSwitchCase="6" style="background: #F2C18A;"></p>
-                    <p *ngSwitchCase="7" style="background: #F2B587;"></p>
-                    <p *ngSwitchCase="8" style="background: #E6B37C;"></p>
-                    <p *ngSwitchCase="9" style="background: #E2B680;"></p>
-                    <p *ngSwitchCase="10" style="background: #DFB076;"></p>
-                    <p *ngSwitchCase="11" style="background: #D6A578;"></p>
-                    <p *ngSwitchCase="12" style="background: #D7A677;"></p>
-                    <p *ngSwitchCase="13" style="background: #DBA27C;"></p>
-                    <p *ngSwitchCase="14" style="background: #D0A078;"></p>
-                    <p *ngSwitchCase="15" style="background: #BE9578;"></p>
-                    <p *ngSwitchCase="16" style="background: #AE825F;"></p>
-                    <p *ngSwitchCase="17" style="background: #A18260;"></p>
-                    <p *ngSwitchCase="18" style="background: #8E6F54;"></p>
-                  </container-element>
-                </p>
-                <p>Comment: {{skin.comment}}</p>
-              </div>
-        </div>
+<section *ngIf="skin" class="container" [routerLink]="['/skins']">
+  <div class="header-background">
+    <h2>Skin for day: {{skin.skinDate | date:'dd/MM/YYYY'}}</h2>
+  </div>
+  <div class="skin-container">
+    <p>Sun Bath Duration: {{skin.skinBathDuration}} minutes</p>
+    <p class="skin-colors">Skin Tan:
+      <container-element [ngSwitch]=skin.skinColor>
+        <p *ngSwitchCase="1" style="background: #F8D1AE;"></p>
+        <p *ngSwitchCase="2" style="background: #F9C99D;"></p>
+        <p *ngSwitchCase="3" style="background: #F4BF96;"></p>
+        <p *ngSwitchCase="4" style="background: #F3C996;"></p>
+        <p *ngSwitchCase="5" style="background: #F3C18A;"></p>
+        <p *ngSwitchCase="6" style="background: #F2C18A;"></p>
+        <p *ngSwitchCase="7" style="background: #F2B587;"></p>
+        <p *ngSwitchCase="8" style="background: #E6B37C;"></p>
+        <p *ngSwitchCase="9" style="background: #E2B680;"></p>
+        <p *ngSwitchCase="10" style="background: #DFB076;"></p>
+        <p *ngSwitchCase="11" style="background: #D6A578;"></p>
+        <p *ngSwitchCase="12" style="background: #D7A677;"></p>
+        <p *ngSwitchCase="13" style="background: #DBA27C;"></p>
+        <p *ngSwitchCase="14" style="background: #D0A078;"></p>
+        <p *ngSwitchCase="15" style="background: #BE9578;"></p>
+        <p *ngSwitchCase="16" style="background: #AE825F;"></p>
+        <p *ngSwitchCase="17" style="background: #A18260;"></p>
+        <p *ngSwitchCase="18" style="background: #8E6F54;"></p>
+      </container-element>
+    </p>
+    <p>Comment: {{skin.comment? skin.comment : "No commnet"}}</p>
+  </div>
 </section>
 <div *ngIf="!skin">Loading...</div>
-

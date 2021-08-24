@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {
-    path: 'skin',
+    path: 'skins',
     loadChildren: () => import('./skin/skin.module').then(m => m.SkinModule)
   },
   {

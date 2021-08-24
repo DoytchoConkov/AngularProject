@@ -30,7 +30,7 @@ export class NewSkinComponent implements OnDestroy{
     if (this.form.invalid) { return; }
     this.contentService.saveSkin(this.form.value).subscribe({
       next: () => {
-        this.router.navigate(['/skin']);
+        this.router.navigate(['/skins']);
       },
       error: (err) => {
         console.log(err);

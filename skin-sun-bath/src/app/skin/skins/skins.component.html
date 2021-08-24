@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let skin of skins" [routerLink]="['/skin', skin._id]">
+        <tr *ngFor="let skin of skins" [routerLink]="['/skins', skin._id]">
           <td>{{skin.skinDate | date:'dd/MM/YYYY'}}</td>
           <td>{{skin.skinBathDuration}} min.</td>
           <td class="skin-colors">

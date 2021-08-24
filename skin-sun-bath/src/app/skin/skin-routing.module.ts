@@ -8,12 +8,21 @@ import { CalculatorComponent } from './calculator/calculator.component';
 
 const routes: Routes = [
   {
-    path: 'skin',
+    path: 'skins',
     children: [
       {
         path: '',
         pathMatch: 'full',
         component: SkinsComponent, canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          authenticationFailureRedirectUrl: '/login',
+        }
+      },
+      {
+        path: 'calculate',
+        component: CalculatorComponent,
+        canActivate: [AuthActivate],
         data: {
           authenticationRequired: true,
           authenticationFailureRedirectUrl: '/login',
@@ -26,6 +35,10 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'skinId',
+    component: SkinComponent
+  },
+  {
     path: 'add-skin',
     component: NewSkinComponent,
     canActivate: [AuthActivate],
@@ -34,15 +47,6 @@ const routes: Routes = [
       authenticationFailureRedirectUrl: '/login',
     }
   },
-  {
-    path: ':calculate',
-    component: CalculatorComponent, 
-    canActivate: [AuthActivate],
-    data: {
-      authenticationRequired: true,
-      authenticationFailureRedirectUrl: '/login',
-    }
-  }
 ];
 
 @NgModule({
