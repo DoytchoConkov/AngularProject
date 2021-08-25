@@ -82,14 +82,6 @@ function logout(req, res) {
         .catch(err => res.send(err));
 }
 
-function getProfileInfo(req, res, next) {
-    const { _id: userId } = req.user;
-
-    userModel.findOne({ _id: userId }, { password: 0, __v: 0 })
-        .then(user => { res.status(200).json(user == undefined) })
-        .catch(next);
-}
-
 function getIfExist(req, res, next) {
     const { email: email } = req.body;
     userModel.findOne({ email: email })
@@ -121,11 +113,22 @@ function editProfileInfo(req, res, next) {
         .catch(next);
 }
 
+function clearSkins(req, res, next) {
+    const { _id: userId } = req.user;
+    // const { email } = req.body;
+    const skins = [];
+
+    userModel.findOneAndUpdate({ _id: userId }, { skins }, { runValidators: true, new: true })
+        .then(x => { res.status(200).json(x) })
+        .catch(next);
+}
+
 module.exports = {
     login,
     register,
     logout,
     getProfileInfo,
     editProfileInfo,
-    getIfExist
+    getIfExist,
+    clearSkins
 }

@@ -44,7 +44,14 @@ export class UserService {
   }
 
   updateProfile(data: { username: string; email: string; }) {
-    return this.http.put<IUser>(`${apiURL}/profile`, data, { withCredentials: true }).pipe(
+    return this.http.put<IUser>(`${apiURL}/users/profile`, data, { withCredentials: true }).pipe(
+      tap((user) => this.user = user)
+    );
+  }
+
+  clearSkins(data: { email: string; }) {
+    console.log(data)
+    return this.http.put<IUser>(`${apiURL}/users/clearSkins`, data, { withCredentials: true }).pipe(
       tap((user) => this.user = user)
     );
   }

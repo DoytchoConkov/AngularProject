@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../core/guards/auth.activate';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,15 @@ const routes: Routes = [
     data: {
       authenticationRequired: false,
       authenticationFailureRedirectUrl: '/',
+    }
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthActivate],
+    data: {
+      authenticationRequired: true,
+      authenticationFailureRedirectUrl: '/user/login',
     }
   }
 ];

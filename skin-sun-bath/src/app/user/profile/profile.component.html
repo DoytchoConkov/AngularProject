@@ -1,0 +1,30 @@
+<section class="container" *ngIf="user" >
+  <div class="header-background">
+    <h2>User details</h2>
+  </div>
+  <form #form="ngForm" (ngSubmit)="updateProfile(form)">
+    <div class="user-container">
+    
+      <p>Email: {{user.email}}</p>
+      <label>Username: </label>
+       <input #username="ngModel" type="text" name="username" id="username"  required minlength=5 [ngModel]="user!.username">
+       <ng-container *ngIf="username.touched">
+        <p *ngIf="username.errors?.required" class="error">
+          Username is required!
+        </p>
+        <p *ngIf="username.errors?.minlength" class="error">
+          Username should be more than 4
+        </p>
+      </ng-container>
+      <p>Skin coefficient: {{coefficient}}</p>
+    </div>
+
+    <div class="update-username">
+      <button name="updateUsername" type="submit" (click)="updateUsername(form)">Update Username</button>
+    </div>
+    <div class="clear-skins">
+      <button name="clearSkins" type="submit" (click)="clearSkins()">Clear</button>
+    </div>
+  </form>
+</section>
+<section *ngIf="!user">Loading...</section>

@@ -23,7 +23,7 @@
           <a routerLink="/skins/calculate">Skin Calculator</a>
         </li>
         <p class="space"></p>
-        <li  class="user">Welcome, {{username}}</li>
+        <li  class="user" routerLink="/user/profile">Welcome, {{username}}</li>
         <li (click)="logout()" class="user">Logout</li>
       </ul>
     </nav>
