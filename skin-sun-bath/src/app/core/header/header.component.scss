@@ -65,8 +65,10 @@ nav li:hover{
 .user:hover{
   background: #C19A6B;
   color: #3B2F2F;
+  cursor: pointer;
 }
  .logo-wrap{
+   
    display: flex;
    align-items: center;
  }

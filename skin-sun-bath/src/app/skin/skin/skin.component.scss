@@ -10,30 +10,6 @@
     max-height: 600px;
     overflow: auto;
   }
-  .skin-title::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  .skin-title::-webkit-scrollbar-track {
-    background-color: #a67b5b;
-    border-radius: 100px;
-  }
-
-  .skin-title::-webkit-scrollbar-thumb {
-    background-color: #c19a6b;
-    border-radius: 100px;
-  }
-
-  table {
-    margin: 0 auto;
-    text-align: center;
-  }
-  thead {
-    font-weight: bold;
-  }
-  td {
-    padding: 0 10px;
-  }
 
   .skin-colors p {
     display: inline-block;
