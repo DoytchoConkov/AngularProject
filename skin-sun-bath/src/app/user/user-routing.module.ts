@@ -7,36 +7,40 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [AuthActivate],
-    data: {
-      authenticationRequired: false,
-      authenticationFailureRedirectUrl: '/',
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: [AuthActivate],
-    data: {
-      authenticationRequired: false,
-      authenticationFailureRedirectUrl: '/',
-    }
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthActivate],
-    data: {
-      authenticationRequired: true,
-      authenticationFailureRedirectUrl: '/user/login',
-    }
-  }
-];
+    path: '',
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: false,
+          authenticationFailureRedirectUrl: '/',
+        }
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: false,
+          authenticationFailureRedirectUrl: '/',
+        }
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          authenticationFailureRedirectUrl: '/user/login',
+        }    
+      }
+    ]
+  }]
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
+      imports: [RouterModule.forChild(routes)],
+      exports: [RouterModule]
+    })
 export class UserRoutingModule { }

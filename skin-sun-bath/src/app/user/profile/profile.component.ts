@@ -4,6 +4,8 @@ import { UserService } from '../../core/services/user.service';
 import { ContentService } from 'src/app/core/services/content.service';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { IUser } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'softuni-profile',
@@ -22,21 +24,12 @@ export class ProfileComponent {
   }
 
   constructor(private contentService: ContentService, private fb: FormBuilder, private userService: UserService,private router: Router) {
-    this.userService.getProfileInfo().subscribe(() => {
-      this.isLoading = false;
-    });
-    this.contentService.loadSkinCoefficient(this.userService.user?.email!).subscribe(coefficient => this.coefficient = +coefficient.toFixed(2));
-    console.log(this.coefficient)
+    // this.contentService.loadSkinCoefficient(this.userService.user?.email!).subscribe(coefficient => this.coefficient = +coefficient.toFixed(2));
+    this.userService.getProfileInfo().pipe(map((user)=>{
+      this.contentService.loadSkinCoefficient(this.userService.user?.email!).subscribe(coefficient => this.coefficient = +coefficient.toFixed(2))})).subscribe();
   }
 
-  public onSubmit(): void {
-    if (this.nextClicked) {
-
-    }
-    
-  }
-
-  updateProfile(form: NgForm): void {
+  updateProfile(_form: NgForm): void {
    
   }
 

@@ -30,13 +30,14 @@ const routes: Routes = [
       },
       {
         path: ':skinId',
-        component: SkinComponent
+        component: SkinComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          authenticationFailureRedirectUrl: '/login',
+        }
       }
     ]
-  },
-  {
-    path: 'skinId',
-    component: SkinComponent
   },
   {
     path: 'add-skin',

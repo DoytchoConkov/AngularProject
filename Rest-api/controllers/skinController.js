@@ -28,6 +28,7 @@ function getSkinCoefficient(req, res, next) {
             let minSkin = 24;
             let maxSkin = 0;
             let duration = 0;
+            console.log(user.skins)
             for (let index = 0; index < user.skins.length; index++) {
                 if (minSkin > user.skins[index].skinColor) { minSkin = user.skins[index].skinColor; }
                 if (maxSkin < user.skins[index].skinColor && user.skins[index].skinColor < 19) { maxSkin = user.skins[index].skinColor; }

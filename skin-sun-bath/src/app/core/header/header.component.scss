@@ -44,7 +44,8 @@ header a {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: auto;
+  margin: 10px auto;
+  padding: 0 20px;
 }
 
 .mini-navbar ul {
@@ -82,5 +83,5 @@ nav li:hover{
 }
 
 .space{
-  width: 200px;
+  width: 20em;
 }
