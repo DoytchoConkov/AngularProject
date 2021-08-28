@@ -25,7 +25,7 @@ export class LoginComponent {
     const { email, password } = form.value;
     this.userService.login({ email, password }).subscribe({
       next: () => {
-        const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/';
+        const redirectUrl = this.activatedRoute.snapshot.queryParams.redirectUrl || '/home';
         this.router.navigate([redirectUrl]);
       },
       error: (err) => {

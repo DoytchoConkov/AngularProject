@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContentService } from 'src/app/core/services/content.service';
-import { Skin } from 'src/app/shared/interfaces/skin';
+import { ISkin } from 'src/app/shared/interfaces/skin';
 
 @Component({
   selector: 'app-skin',
@@ -10,7 +10,7 @@ import { Skin } from 'src/app/shared/interfaces/skin';
 })
 export class SkinComponent {
 
-  skin: Skin | undefined;
+  skin: ISkin | undefined;
 
   constructor(
     private contentService: ContentService,

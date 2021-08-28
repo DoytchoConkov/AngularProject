@@ -5,7 +5,6 @@ import { ContentService } from 'src/app/core/services/content.service';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { IUser } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'softuni-profile',
@@ -37,7 +36,7 @@ export class ProfileComponent {
     if (form.invalid) { return; }
     this.userService.updateProfile({ username: form.value.username, email: this.user!.email }).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       error: (err) => {
         console.error(err);
@@ -47,7 +46,7 @@ export class ProfileComponent {
   public clearSkins(): void {
     this.userService.clearSkins({ email: this.user!.email }).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       error: (err) => {
         console.error(err);

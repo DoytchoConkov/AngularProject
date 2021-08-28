@@ -21,7 +21,7 @@ export class NewSkinComponent implements OnDestroy{
   ) {this.form = this.fb.group({
     skinDate: ['', [Validators.required]],
     skinBathDuration: ['', [Validators.required]],
-    comment: [],
+    comment: [''],
     skinColor: ['', [Validators.required]]
     
   }); }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ContentService } from 'src/app/core/services/content.service';
-import {  Skin } from 'src/app/shared/interfaces';
+import {  ISkin } from 'src/app/shared/interfaces';
 import { UserService } from '../../core/services/user.service';
 
 
@@ -15,8 +15,8 @@ export class SkinsComponent {
     return this.userService.isLogged;
   }
 
-  skins: Skin[] | undefined;
-  recentSkins: Skin[] | undefined;
+  skins: ISkin[] | undefined;
+  recentSkins: ISkin[] | undefined;
   haveSkins=false;
   constructor(
     private contentService: ContentService,

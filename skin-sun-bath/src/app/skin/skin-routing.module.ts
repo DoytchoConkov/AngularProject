@@ -7,9 +7,9 @@ import { SkinComponent } from './skin/skin.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 
 const routes: Routes = [
-  {
-    path: 'skins',
-    children: [
+  // {
+    // path: 'skins',
+    // children: [
       {
         path: '',
         pathMatch: 'full',
@@ -28,6 +28,16 @@ const routes: Routes = [
           authenticationFailureRedirectUrl: '/login',
         }
       },
+
+      {
+        path: 'add-skin',
+        component: NewSkinComponent,
+        canActivate: [AuthActivate],
+        data: {
+          authenticationRequired: true,
+          authenticationFailureRedirectUrl: '/login',
+        }
+      },
       {
         path: ':skinId',
         component: SkinComponent,
@@ -38,17 +48,8 @@ const routes: Routes = [
         }
       }
     ]
-  },
-  {
-    path: 'add-skin',
-    component: NewSkinComponent,
-    canActivate: [AuthActivate],
-    data: {
-      authenticationRequired: true,
-      authenticationFailureRedirectUrl: '/login',
-    }
-  },
-];
+  // }
+// ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

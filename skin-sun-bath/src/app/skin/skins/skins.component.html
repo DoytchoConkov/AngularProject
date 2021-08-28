@@ -44,7 +44,7 @@
               <p *ngSwitchCase="24" style="background: #E02837;"></p>
             </container-element>
           </td>
-          <td>{{skin.comment? skin.comment: "" | shorten : 25}}</td>
+          <td>{{skin.comment | shorten : 20}}</td>
         </tr>
       </tbody>
     </table>

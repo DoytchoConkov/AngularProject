@@ -1,4 +1,4 @@
-export interface Skin {
+export interface ISkin {
   _id: string;
   skinDate: string;
   skinBathDuration: number;
